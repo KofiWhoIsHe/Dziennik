@@ -11,14 +11,6 @@ app.use(cors())
 
 //Laczenie sie z baza danych
 
-//Rejestracja
-app.get("/register/:imie/:nazwisko/:haslo/:profesja", (req, res)=>{
-    let imie=req.params.imie
-    let nazwisko=req.params.nazwisko
-    let haslo=req.params.haslo
-    let profesja=req.params.profesja
-    res.send("Udalo sie zarejestrowac "+ imie+" "+nazwisko+" Z haslem: "+haslo)
-})
 //Wyswietlanie uzytkownikow (potrzebne do logowania)
 app.get("/show-users",(req,res)=>{
     res.send("Narazie tyle ci pokarze essa")

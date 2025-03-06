@@ -1,0 +1,1 @@
+//fajny pomysl z position fix
