@@ -19,6 +19,7 @@
     width: 58.69993333333332%;
     height: 100vh;
     float: left;
+
 }
 .right{
     background-image: linear-gradient(to left,#94EED8 ,#DEFFE4);
@@ -55,23 +56,10 @@
     top:14px;
     left: 250px;;
 }
-/* Do lewego */
-.noweOceny{
-    background-color: #BDFF9A;
-    width: 30%;
-    height: 65%;
-    position: relative;
-    top: 104px;
-    left: 115px;
-    box-shadow:  -60px -60px 2px #33581F;
-}
-/* Do prawego */
-.planDzis{
-    background-color: #BDFF9A;
-    width: 30%;
-    height: 65%;
-    position: relative;
-    bottom: 489px;
-    left: 640px;
-    box-shadow:  60px 60px 2px #33581F;
+#WyborLekcji{
+text-align: center;
+background-color:beige;
+color:#233d0f;
+font-size: 150%;
+height: 50px;
 }
