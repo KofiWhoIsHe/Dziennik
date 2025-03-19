@@ -8,16 +8,32 @@
 </head>
 <body>
     <div class="container">
-        <div class="left"></div>
         <div class="main">
             <div class="nav">
-                <button id="plan"  onclick="window.open('file:///C:/KB/Dziennik/client/Plan.html')">Plan lekcji</button>
-                <button id="main" onclick="window.open('file:///C:/KB/Dziennik/client/StronaGlowna.html')">Strona główna</button>
-                <button id="oceny" onclick="window.open('file:///C:/KB/Dziennik/client/Oceny.html')">Oceny</button>
+                <button id="plan" onclick="location.href='Plan.html'">Plan lekcji</button>
+                <button id="main" onclick="location.href='StronaGlowna.html'">Strona główna</button>
+                <button id="oceny" onclick="location.href='Oceny.html'">Oceny</button>
             </div>
-            <img src="" alt="">
+            <div class="content">
+                <table id="planTable" border="1">
+                    <thead>
+                        <tr>
+                            <th>Nr</th>
+                            <th>Godz</th>
+                            <th>Poniedziałek</th>
+                            <th>Wtorek</th>
+                            <th>Środa</th>
+                            <th>Czwartek</th>
+                            <th>Piątek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Plan lekcji będzie tutaj wstawiony dynamicznie -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="right"></div>
-        <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

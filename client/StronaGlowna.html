@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dziennik</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Strona Główna</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="container">
-        <div class="left"></div>
-        <div class="main">
-            <div class="nav">
-                <button id="plan"  onclick="window.open('file:///C:/KB/Dziennik/client/Plan.html')">Plan lekcji</button>
-                <button id="main" onclick="window.open('file:///C:/KB/Dziennik/client/StronaGlowna.html')">Strona główna</button>
-                <button id="oceny" onclick="window.open('file:///C:/KB/Dziennik/client/Oceny.html')">Oceny</button>
+    <div class="container main-container">
+        <div class="main main-content">
+            <div class="nav main-nav">
+                <button id="plan" onclick="location.href='Plan.html'">Plan lekcji</button>
+                <button id="main" onclick="location.href='StronaGlowna.html'">Strona główna</button>
+                <button id="oceny" onclick="location.href='Oceny.html'">Oceny</button>
             </div>
-            <div class="left-shadow"></div>
-            <div class="noweOceny">
-
+            <div class="content main-content">
+                <div class="left main-left">
+                    <h2>Dzisiejsze lekcje</h2>
+                    <ul id="dzisiejszeLekcje"></ul>
+                </div>
+                <div class="right main-right">
+                    <h2>5 najnowszych ocen</h2>
+                    <ul id="najnowszeOceny"></ul>
+                </div>
             </div>
-            <div class="planDzis">
-                
-            </div>
-            <div class="right-shadow"></div>
         </div>
-        <div class="right"></div>
-        <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

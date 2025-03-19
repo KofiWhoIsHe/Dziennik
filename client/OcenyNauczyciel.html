@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oceny</title>
+    <title>Oceny Nauczyciela</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="main">
             <div class="nav">
-                <button id="plan" onclick="location.href='Plan.html'">Plan lekcji</button>
-                <button id="main" onclick="location.href='StronaGlowna.html'">Strona główna</button>
-                <button id="oceny" onclick="location.href='Oceny.html'">Oceny</button>
+                <button id="plan" onclick="window.location.href='PlanNauczyciel.html'">Plan lekcji</button>
+                <button id="oceny" onclick="window.location.href='OcenyNauczyciel.html'">Oceny</button>
             </div>
-            <div class="content">
-                <label for="przedmiot">Wybierz przedmiot:</label>
+            <form id="addGradeForm">
+                <label for="przedmiot">Przedmiot:</label>
                 <select id="przedmiot" name="przedmiot">
                     <option value="Polski">Polski</option>
                     <option value="Matematyka">Matematyka</option>
@@ -27,19 +26,22 @@
                     <option value="Chemia">Chemia</option>
                     <option value="WF">W-F</option>
                 </select>
-                <table id="gradesTable" border="1">
-                    <thead>
-                        <tr>
-                            <th>Przedmiot</th>
-                            <th>Ocena</th>
-                            <th>Data dodania</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Fetched grades will be inserted here -->
-                    </tbody>
-                </table>
-            </div>
+                <label for="ocena">Ocena:</label>
+                <input type="number" id="ocena" name="ocena" min="1" max="6" required>
+                <button type="submit">Dodaj ocenę</button>
+            </form>
+            <table id="gradesTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Przedmiot</th>
+                        <th>Ocena</th>
+                        <th>Data_dodania</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fetched grades will be inserted here -->
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="script.js"></script>
