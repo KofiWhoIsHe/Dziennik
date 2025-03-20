@@ -11,9 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             fetch(`http://localhost:3000/show-grades/${cSub.value}`)
                 .then(function(res) {
-                    if (!res.ok) {
-                        throw new Error(`Server error: ${res.status}`);
-                    }
                     return res.json();
                 })
                 .then(function(grades) {
@@ -52,9 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "GET"
             })
                 .then(function(res) {
-                    if (!res.ok) {
-                        throw new Error(`Server error: ${res.status}`);
-                    }
                     return res.text();
                 })
                 .then(function(result) {
@@ -123,68 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     genPlanTbl();
 
-    // Dzisiejsze lekcje
-    function getTodayLessons() {
-        const today = new Date().getDay() - 1;
-        if (today < 0 || today > 4) {
-            return [];
-        }
-        return planTyg[today];
-    }
+    // Dzisiejsze lekcje (narazie nic tu nie ma)
+    // Najnowsze oceny (narazie nic tu nie)
 
-    function displayTodayLessons() {
-        const lessons = getTodayLessons();
-        const lessonsList = document.getElementById("dzisiejszeLekcje");
-        lessonsList.innerHTML = "";
-
-        if (lessons.length === 0) {
-            lessonsList.innerHTML = "<li>Brak lekcji dzisiaj</li>";
-        } else {
-            for (let i = 0; i < lessons.length; i++) {
-                const listItem = document.createElement("li");
-                listItem.innerHTML = lessons[i].godz + " - " + lessons[i].przedm + " (" + lessons[i].nauczyc + ", sala: " + lessons[i].sala + ")";
-                lessonsList.appendChild(listItem);
-            }
-        }
-    }
-
-    // Najnowsze oceny
-    function fetchLatestGrades() {
-        return fetch(`http://localhost:3000/latest-grades`)
-            .then(function(res) {
-                if (!res.ok) {
-                    throw new Error(`Server error: ${res.status}`);
-                }
-                return res.json();
-            })
-            .catch(function(error) {
-                console.error("Error fetching latest grades:", error);
-                return [];
-            });
-    }
-
-    function displayLatestGrades() {
-        fetchLatestGrades().then(function(grades) {
-            const gradesList = document.getElementById("najnowszeOceny");
-            gradesList.innerHTML = "";
-
-            if (grades.length === 0) {
-                gradesList.innerHTML = "<li>Brak ocen</li>";
-            } else {
-                for (let i = 0; i < grades.slice(0, 5).length; i++) {
-                    const listItem = document.createElement("li");
-                    listItem.innerHTML = grades[i].Przedmiot + ": " + grades[i].Ocena + " (" + new Date(grades[i].Data_dodania).toLocaleDateString('pl-PL') + ")";
-                    gradesList.appendChild(listItem);
-                }
-            }
-        });
-    }
-
-    // Wywołanie funkcji
-    if (document.getElementById("dzisiejszeLekcje")) {
-        displayTodayLessons();
-    }
-    if (document.getElementById("najnowszeOceny")) {
-        displayLatestGrades();
-    }
 });

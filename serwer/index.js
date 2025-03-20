@@ -19,7 +19,7 @@ var con = mysql.createConnection({
 //Wyswietlanie ocen
 app.get("/show-grades/:subject", (req, res) => {
     let subject = req.params.subject;
-    console.log("Received subject:", subject); // Log the received subject
+    console.log("Received subject:", subject);
     let sql = `SELECT Przedmiot, Ocena, Data_dodania FROM Oceny WHERE Przedmiot = ?`;
     con.query(sql, [subject], (err, wynik) => {
         if (err) {
@@ -27,8 +27,8 @@ app.get("/show-grades/:subject", (req, res) => {
             res.status(500).json({ error: "Błąd serwera" });
             return;
         }
-        console.log("Wynik zapytania:", wynik); // Log the query result
-        res.json(wynik.length ? wynik : []); // Ensure the response is always a valid JSON array
+        console.log("Wynik zapytania:", wynik); 
+        res.json(wynik.length ? wynik : []); 
     });
 });
 
